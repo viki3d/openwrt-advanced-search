@@ -148,7 +148,7 @@ Unzip .gz file:
 
 ?>
 ```
-Unzip .zip file
+Unzip .zip file  
 The file "<i>toh_dump_tab_separated.zip</i>" is not usual .zip archive but an SFX-ZIP archive, which is not readable from the PHP ZipArchive package. And we do not want to use custom implementation or 3rd party library for that. That's why we go for the .gz version of the file.
 ```
 	function unZipFile($inpFile, $outFolder) {
