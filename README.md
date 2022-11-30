@@ -13,7 +13,7 @@
 ### <a href="#c2_1"   >2.1. Bootstrap 5</a>  
 #### <a href="#c2_1"   >2.1.1. Imports</a>  
 #### <a href="#c2_1"   >2.1.2. Tooltips</a>  
-### <a href="#c2_2"    >2.2. Javascript</a>  
+### <a href="#c2_2"    >2.2. HTML</a>  
 ### <a href="#c2_3"    >2.3. Javascript</a>  
 ### <a href="#c2_4"    >2.4. Angular</a>  
 
@@ -238,5 +238,10 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	return tootlip;
 });
 ```
+
+HTML
+scope row/col
+
+Javascript let
 
 
