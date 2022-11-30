@@ -147,4 +147,57 @@ Unzip .gz file:
 
 ?>
 ```
+Unzip .zip file
+The file "<i>toh_dump_tab_separated.zip</i>" is not usual .zip archive but an SFX-ZIP archive, which is not readable from the PHP ZipArchive package. And we do not want to use custom implementation or 3rd party library for that. That's why we go for the .gz version of the file.
+```
+	function unZipFile($inpFile, $outFolder) {
+		$zip = new ZipArchive;
+		$res = $zip->open($inpFile);
+		if ($res === TRUE) {
+			$zip->extractTo($outFolder);
+			$zip->close();
+		} 
+		else {
+			switch($res){
+				case ZipArchive::ER_EXISTS:
+					$ErrMsg = "(". ZipArchive::ER_EXISTS . ") File already exists.";
+					break;
+				case ZipArchive::ER_INCONS:
+					$ErrMsg = "(". ZipArchive::ER_INCONS . ") Zip archive inconsistent.";
+					break;
+				   
+				case ZipArchive::ER_MEMORY:
+					$ErrMsg = "(". ZipArchive::ER_MEMORY . ") Malloc failure.";
+					break;
+				   
+				case ZipArchive::ER_NOENT:
+					$ErrMsg = "(". ZipArchive::ER_NOENT . ") No such file.";
+					break;
+				   
+				case ZipArchive::ER_NOZIP:
+					$ErrMsg = "(". ZipArchive::ER_NOZIP . ") Not a zip archive.";
+					break;
+				   
+				case ZipArchive::ER_OPEN:
+					$ErrMsg = "(". ZipArchive::ER_OPEN . ") Can't open file.";
+					break;
+				   
+				case ZipArchive::ER_READ:
+					$ErrMsg = "(". ZipArchive::ER_READ . ") Read error.";
+					break;
+				   
+				case ZipArchive::ER_SEEK:
+					$ErrMsg = "(". ZipArchive::ER_SEEK . ") Seek error.";
+					break;
+			   
+				default:
+					$ErrMsg = "Unknow (Code $rOpen)";
+					break;
+			}
+			error_log('ZipArchive Error: ' . $ErrMsg);
+			die('ZipArchive Error: ' . $ErrMsg);
+		}
+	}
+```
+
 
