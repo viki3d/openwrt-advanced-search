@@ -32,7 +32,7 @@ Accept-Ranges: bytes
 Strict-Transport-Security: max-age=31536000
 ```
 After completing this first step we are obtaining <b><i>'Etag'</i></b> of the requested resource.  
-After having the <b><i>'Etag'</i></b> we can include it into the next request:  
+After having the <b><i>'Etag'</i></b> we can include it into the next request as <b><i>'If-None-Match'</i></b>:  
 
 ```
 GET /_media/toh_dump_tab_separated.gz HTTP/2
