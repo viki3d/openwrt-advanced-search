@@ -118,7 +118,7 @@ Get the <b><i>Etag</i></b> with HEAD request:
 			error_log("ETAG_NOT_FOUND");
 			return "ETAG_NOT_FOUND";
 		}
-		return $etag, $lastModified;
+		return $etag;
 	}
 ?>
 ```
