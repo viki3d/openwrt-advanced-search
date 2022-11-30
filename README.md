@@ -64,7 +64,7 @@ Host: openwrt.org
 
 The server will repond with <i>headers only</i>. We can now check the returned <i>Etag</i> value and compare to our's.
 
-#### <span id="#c1_1_2">1.1.2. CURL</span>
+#### <span id="c1_1_2">1.1.2. CURL</span>
 Test the request using the <i>curl</i> tool:
 ```
 curl https://openwrt.org/_media/toh_dump_tab_separated.gz \
