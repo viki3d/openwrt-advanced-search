@@ -75,6 +75,7 @@ curl https://openwrt.org/_media/toh_dump_tab_separated.gz \
 ```
 
 #### <span id="c1_1_3">1.1.3. PHP</span>
+Get the <b><i>Etag</i></b> with HEAD request
 ```
 <?php
 
@@ -113,6 +114,32 @@ curl https://openwrt.org/_media/toh_dump_tab_separated.gz \
 		}
 		return $etag, $lastModified;
 	}
+?>
+```
+Unzip .gz file
+```
+<?php
+
+	function unGzFile($inpFilename, $outFilename) {
+		// Raising this value may increase performance
+		$buffer_size = 4096; // read 4kb at a time
+
+		// Open our files (b is for binary mode)
+		$inp = gzopen($inpFilename, 'rb');
+		$out = fopen($outFilename, 'w');
+
+		// Keep repeating until the end of the input file
+		while(!gzeof($inp)) {
+			// Read buffer-size bytes
+			// Both fwrite and gzread and binary-safe
+			fwrite($out, gzread($inp, $buffer_size));
+		}
+
+		// Files are done, close files
+		fclose($out);
+		gzclose($inp);
+	}
+
 ?>
 ```
 
