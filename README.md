@@ -1,7 +1,7 @@
 # openwrt-advanced-search
 ### <a href="http://openwrt.viki3d.com/demo.html" target="_blank">DEMO</a>
 
-![openwrt-advanced-search-02.png](/openwrt-advanced-search-02.png?id=1 "openwrt-advanced-search common view")
+![openwrt-advanced-search-02.png](/openwrt-advanced-search-02.png?id=1 "openwrt-advanced-search main schema")
 
 ### CONTENTS
 ## <a href="#c1"      >1. Download router's database</a>  
@@ -9,6 +9,13 @@
 #### <a href="#c1_1_1">1.1.1 Raw</a>  
 #### <a href="#c1_1_2">1.1.2 CURL</a>  
 #### <a href="#c1_1_3">1.1.3 PHP</a>  
+## <a href="#c2"      >2. Building the page</a>  
+### <a href="#c2_1"   >2.1. Bootstrap 5</a>  
+### <a href="#c2_1"   >2.1.1. Imports</a>  
+### <a href="#c2_1"   >2.1.2. Tooltips</a>  
+## <a href="#c2_2"    >2.2. Javascript</a>  
+## <a href="#c2_3"    >2.3. Javascript</a>  
+## <a href="#c2_4"    >2.4. Angular</a>  
 
 ## <span id="c1">1. Download router's database</span>
 ### <span id="c1_1">1.1. HTTP requests</span>
