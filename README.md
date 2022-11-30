@@ -1,7 +1,7 @@
 # openwrt-advanced-search
 ### <a href="http://openwrt.viki3d.com/demo.html" target="_blank">DEMO</a>
 
-![openwrt-advanced-search-01.png](/openwrt-advanced-search-01.png "openwrt-advanced-search common view")
+![openwrt-advanced-search-02.png](/openwrt-advanced-search-02.png?id=1 "openwrt-advanced-search common view")
 
 ### CONTENTS
 ## <a href="#c1"      >1. Download router's database</a>  
