@@ -205,6 +205,23 @@ The file "<i>toh_dump_tab_separated.zip</i>" is not usual .zip archive but an SF
 ?>
 ```
 
+Bootstrap 5 depends from 3rd party dependency: Popper, which should be available by including <i>bootstrap.bundle.js</i>. However, we do not want to import all that stuff but only the minimal Bootstrap: <i>bootstrap.bundle.js</i>, which involves the need of explicit import of the Popper dependency:
+```
+<head>
+	...
+	<!-- Popper -->
+	<script src="./plugins/popper/2.11.6/popper.min.js"></script>
+	<!-- 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+	-->
+	
+	<!-- Bootstrap (@depends jQuery or Popper) -->
+	<link href="./plugins/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="./plugins/bootstrap/5.0.2/css/bootstrap-grid.min.css" rel="stylesheet" />
+	<link href="./plugins/bootstrap/5.0.2/css/bootstrap-utilities.min.css" rel="stylesheet" />
+	<script src="./plugins/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+```
+
 
 Enable Bootstrap 5 tooltips  
 ```
