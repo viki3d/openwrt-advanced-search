@@ -1,1 +1,77 @@
 # openwrt-advanced-search
+
+### CONTENTS
+## <a href="#c1"      >1. Download router's database</a>  
+### <a href="#c1_1"   >1.1. HTTP request</a>  
+#### <a href="#c1_1_1">1.1.1 Raw</a>  
+#### <a href="#c1_1_2">1.1.2 CURL</a>  
+#### <a href="#c1_1_3">1.1.3 PHP</a>  
+
+## <span id="c1">1. Download router's database</span>
+### <span id="c1_1">1.1. HTTP requests</span>
+#### <span id="c1_1_1">1.1.1. Raw</span>
+On first call we are downlading the file <b><i>'toh_dump_tab_separated.gz'</i></b>
+```
+GET /_media/toh_dump_tab_separated.gz HTTP/2
+Host: openwrt.org
+```
+
+```
+HTTP/2 200
+Server: nginx
+Date: Wed, 28 Nov 2022 08:51:02 GMT
+Content-Type: application/octet-stream
+Content-Length: 335447
+Pragma: no-cache
+Cache-Control: public, proxy-revalidate, no-transform, max-age=68400
+Last-Modified: Wed, 28 Nov 2022 05:10:26 GMT
+ETag: "620379bb9bd27e4fc58155fe4ab5a269"
+Content-Disposition: attachment; filename="toh_dump_tab_separated.gz";
+Accept-Ranges: bytes
+Strict-Transport-Security: max-age=31536000
+```
+After completing this first step we are obtaining <b><i>'Etag'</i></b> of the requested resource.  
+After having the <b><i>'Etag'</i></b> we can include it into the next request:  
+
+```
+GET /_media/toh_dump_tab_separated.gz HTTP/2
+Host: openwrt.org
+If-None-Match: "620379bb9bd27e4fc58155fe4ab5a269"
+```
+
+If the file on server HAS been changed - it will be downloaded again.
+If the file on server HAS NOT been changed - the server will respond with <i>HTTP 304</i>. This
+means the file <i>will not be downloaded again</i>.
+
+```
+HTTP/2 304
+Server: nginx
+Date: Wed, 28 Nov 2022 09:13:28 GMT
+Pragma: no-cache
+Expires: Thu, 01 Dec 2022 04:13:28 GMT
+Cache-control: public, proxy-revalidate, no-transform, max-age=68400
+Last-modified: Wed, 28 Nov 2022 05:10:26 GMT
+Etag: "620379bb9bd27e4fc58155fe4ab5a269"
+Strict-Transport-Security: max-age=31536000
+```
+
+Another way to check if file has been changed is to fire HEAD HTTP request:
+
+```
+HEAD /_media/toh_dump_tab_separated.gz HTTP/2
+Host: openwrt.org
+```
+
+The server will repond with <i>headers only</i>. We can now check the returned <i>Etag</i> value and compare to our's.
+
+#### <span id="#c1_1_2">1.1.2. CURL</span>
+Test the request using the <i>curl</i> tool:
+```
+curl https://openwrt.org/_media/toh_dump_tab_separated.gz \
+  -X GET  \
+  -H 'If-None-Match: "620379bb9bd27e4fc58155fe4ab5a269"' \
+  -o toh.gz \
+  -D responseheaders.txt
+```
+
+#### <span id="c1_1_3">1.1.3. PHP</span>
