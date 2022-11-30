@@ -75,3 +75,44 @@ curl https://openwrt.org/_media/toh_dump_tab_separated.gz \
 ```
 
 #### <span id="c1_1_3">1.1.3. PHP</span>
+```
+<?php
+
+	const TOH_FILE_TO_DOWNLOAD_ZIP = "https://openwrt.org/_media/toh_dump_tab_separated.zip";
+	
+	$etag = getEtagWithHeadRequest(TOH_FILE_TO_DOWNLOAD);
+
+	function getEtagWithHeadRequest($url) {
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url); //set the connection url
+		curl_setopt($ch, CURLOPT_NOBODY, true); //set HTTP request type = HEAD 
+		curl_setopt($ch, CURLOPT_HEADER, true); //include headers into response
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //curl_exec return response as a result, instead writing it into console
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //do not verify host's SSL certificate
+
+		$responseHeaders = curl_exec($ch);
+
+		curl_close($ch);
+
+		// Convert to array of rows:
+		$headersArr = explode(PHP_EOL, $responseHeaders);
+		
+		$etag = "";
+		foreach ($headersArr as $header) {
+			if ( strtoupper(substr($header, 0, strlen("ETAG"))) == "ETAG") {
+				// Get everything after ':'
+				$val = trim( substr($header, strpos($header, ":")+1, strlen($header))  );
+				// Remove quotes
+				$etag = substr($val, 1, strlen($val)-2 );
+			}
+		}	
+		
+		if ($etag == "") {
+			error_log("ETAG_NOT_FOUND");
+			return "ETAG_NOT_FOUND";
+		}
+		return $etag, $lastModified;
+	}
+?>
+```
+
