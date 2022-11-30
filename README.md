@@ -197,3 +197,20 @@ The file "<i>toh_dump_tab_separated.zip</i>" is not usual .zip archive but an SF
 ```
 
 
+Enable Bootstrap 5 tooltips  
+```
+	// ----------------------------------------------------------------
+	// Initialize (enable) tool-tips on this page (uses popper.js)
+	// ----------------------------------------------------------------
+	var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+	var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+		let tootlip = new bootstrap.Tooltip(tooltipTriggerEl);
+		// Hide tooltip after the host element has been clicked:
+		tooltipTriggerEl.addEventListener('click', function() {
+			tootlip.hide();
+		});
+		return tootlip;
+	});
+```
+
+
