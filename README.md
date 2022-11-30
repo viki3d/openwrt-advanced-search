@@ -166,31 +166,24 @@ The file "<i>toh_dump_tab_separated.zip</i>" is not usual .zip archive but an SF
 				case ZipArchive::ER_INCONS:
 					$ErrMsg = "(". ZipArchive::ER_INCONS . ") Zip archive inconsistent.";
 					break;
-				   
 				case ZipArchive::ER_MEMORY:
 					$ErrMsg = "(". ZipArchive::ER_MEMORY . ") Malloc failure.";
 					break;
-				   
 				case ZipArchive::ER_NOENT:
 					$ErrMsg = "(". ZipArchive::ER_NOENT . ") No such file.";
 					break;
-				   
 				case ZipArchive::ER_NOZIP:
 					$ErrMsg = "(". ZipArchive::ER_NOZIP . ") Not a zip archive.";
 					break;
-				   
 				case ZipArchive::ER_OPEN:
 					$ErrMsg = "(". ZipArchive::ER_OPEN . ") Can't open file.";
 					break;
-				   
 				case ZipArchive::ER_READ:
 					$ErrMsg = "(". ZipArchive::ER_READ . ") Read error.";
 					break;
-				   
 				case ZipArchive::ER_SEEK:
 					$ErrMsg = "(". ZipArchive::ER_SEEK . ") Seek error.";
 					break;
-			   
 				default:
 					$ErrMsg = "Unknow (Code $rOpen)";
 					break;
