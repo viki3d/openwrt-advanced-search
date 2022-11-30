@@ -75,7 +75,7 @@ curl https://openwrt.org/_media/toh_dump_tab_separated.gz \
 ```
 
 #### <span id="c1_1_3">1.1.3. PHP</span>
-Get the <b><i>Etag</i></b> with HEAD request
+Get the <b><i>Etag</i></b> with HEAD request:
 ```
 <?php
 
@@ -85,11 +85,16 @@ Get the <b><i>Etag</i></b> with HEAD request
 
 	function getEtagWithHeadRequest($url) {
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $url); //set the connection url
-		curl_setopt($ch, CURLOPT_NOBODY, true); //set HTTP request type = HEAD 
-		curl_setopt($ch, CURLOPT_HEADER, true); //include headers into response
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //curl_exec return response as a result, instead writing it into console
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //do not verify host's SSL certificate
+		// Set the connection url
+		curl_setopt($ch, CURLOPT_URL, $url);
+		// Set HTTP request type = HEAD 
+		curl_setopt($ch, CURLOPT_NOBODY, true);
+		// Include headers into response
+		curl_setopt($ch, CURLOPT_HEADER, true);
+		// curl_exec return response as a result, instead writing it into console
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		// Do not verify host's SSL certificate
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
 
 		$responseHeaders = curl_exec($ch);
 
@@ -116,7 +121,7 @@ Get the <b><i>Etag</i></b> with HEAD request
 	}
 ?>
 ```
-Unzip .gz file
+Unzip .gz file:
 ```
 <?php
 
