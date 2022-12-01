@@ -245,8 +245,13 @@ https://icons.getbootstrap.com/
 ```
 
 ### <span id="c2_2"    >2.2. HTML</span>  
-HTML
-scope row/col
+We use <i>scope="col"</i> for the &lt; tags
+```
+  <tr>
+    <th></th>
+    <th scope="col">Brand</th>
+```
+and don't use <i>scope="row"</i> for bolding the row heads, since the first <b><i>pid</i></b> openwrt column is still not supported due lack of space on the page.
 
 ### <span id="c2_3"    >2.3. Javascript</span>  
 To enable Bootstrap 5 tooltips we need a pinch of Javascript:
