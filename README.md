@@ -230,6 +230,25 @@ Bootstrap 5 depends from 3rd party dependency: Popper, which should be available
 ```
 
 #### <span id="c2_1_2">2.1.2. Tooltips</span>  
+Tooltips rely on the 3rd party library Popper for positioning. You must include popper.min.js before bootstrap.js in order for tooltips to work!  
+
+In order to work they should be initialized with Javascript first. See below.  
+
+```
+<button class="btn btn-primary" title="tooltipText" data-bs-toggle="tooltip" data-bs-placement="top">Model</button>
+```
+
+#### <span id="c2_1_3">2.1.3. Icons</span>  
+Icons usage in the Bootstrap project passed through a lot of transformations. In Bootstrap 3 icons were included into the project and excluded in version 4. Now in version 5 they are again part of the project but available as external content, storing them in SVG format:
+```
+https://icons.getbootstrap.com/
+```
+
+### <span id="c2_2"    >2.2. HTML</span>  
+HTML
+scope row/col
+
+### <span id="c2_3"    >2.3. Javascript</span>  
 To enable Bootstrap 5 tooltips we need a pinch of Javascript:
 ```
 // ----------------------------------------------------------------
@@ -245,19 +264,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	return tootlip;
 });
 ```
-
-#### <span id="c2_1_3">2.1.3. Icons</span>  
-Icons usage in the Bootstrap project passed through a lot of transformations. In Bootstrap 3 icons were included into the project and excluded in version 4. Now in version 5 they are again part of the project but available as external content, storing them in SVG format:
-```
-https://icons.getbootstrap.com/
-```
-
-### <span id="c2_2"    >2.2. HTML</span>  
-HTML
-scope row/col
-
-### <span id="c2_3"    >2.3. Javascript</span>  
-Javascript let
+For most functionality we avoid pure Javascript and use Angular directly.
 
 ### <span id="c2_4"    >2.4. Angular</span>  
 ## <span id="c3"       >3. Functionality and Screenshots</span>  
