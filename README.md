@@ -232,7 +232,7 @@ Bootstrap 5 depends from 3rd party dependency: Popper, which should be available
 #### <span id="c2_1_2">2.1.2. Tooltips</span>  
 Tooltips rely on the 3rd party library Popper for positioning. You must include popper.min.js before bootstrap.js in order for tooltips to work!  
 
-In order to work they should be initialized with Javascript first. See below.  
+In order to work they should be initialized with Javascript first. See below (2.3).  
 
 ```
 <button class="btn btn-primary" title="tooltipText" data-bs-toggle="tooltip" data-bs-placement="top">Model</button>
