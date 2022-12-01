@@ -11,14 +11,14 @@
 #### <a href="#c1_1_3">1.1.3 PHP</a>  
 ## <a href="#c2"      >2. Building the page</a>  
 ### <a href="#c2_1"   >2.1. Bootstrap 5</a>  
-#### <a href="#c2_1"   >2.1.1. Imports</a>  
-#### <a href="#c2_1"   >2.1.2. Tooltips</a>  
-### <a href="#c2_2"    >2.2. HTML</a>  
-### <a href="#c2_3"    >2.3. Javascript</a>  
-### <a href="#c2_4"    >2.4. Angular</a>  
+#### <a href="#c2_1"  >2.1.1. Imports</a>  
+#### <a href="#c2_1"  >2.1.2. Tooltips</a>  
+### <a href="#c2_2"   >2.2. HTML</a>  
+### <a href="#c2_3"   >2.3. Javascript</a>  
+### <a href="#c2_4"   >2.4. Angular</a>  
 ## <a href="#c3"      >3. Functionality and Screenshots</a>  
-## <a href="#c3_1"      >3.1. Columns</a>  
-## <a href="#c3_2"      >3.1. Filters</a>  
+## <a href="#c3_1"    >3.1. Columns</a>  
+## <a href="#c3_2"    >3.1. Filters</a>  
 
 ## <span id="c1">1. Download router's database</span>
 ### <span id="c1_1">1.1. HTTP requests</span>
@@ -134,7 +134,7 @@ Get the <b><i>Etag</i></b> with HEAD request:
 	}
 ?>
 ```
-Unzip .gz file:
+<b>Unzip .gz file:</b>  
 ```
 <?php
 
@@ -160,7 +160,7 @@ Unzip .gz file:
 
 ?>
 ```
-Unzip .zip file  
+<b>Unzip .zip file</b>  
 The file "<i>toh_dump_tab_separated.zip</i>" is not usual .zip archive but an SFX-ZIP archive, which is not readable from the PHP ZipArchive package. And we do not want to use custom implementation or 3rd party library for that. That's why we go for the .gz version of the file.
 ```
 <?php
@@ -208,6 +208,9 @@ The file "<i>toh_dump_tab_separated.zip</i>" is not usual .zip archive but an SF
 ?>
 ```
 
+## <span id="#c2"      >2. Building the page</span>  
+### <span id="#c2_1"   >2.1. Bootstrap 5</span>  
+#### <span id="#c2_1"   >2.1.1. Imports</span>  
 Bootstrap 5 depends from 3rd party dependency: Popper, which should be available by including <i>bootstrap.bundle.min.js</i>. However, we do not want to import all that stuff but only the minimal Bootstrap: <i>bootstrap.min.js</i>, which involves the need of explicit import of the Popper dependency:
 ```
 <head>
@@ -225,7 +228,7 @@ Bootstrap 5 depends from 3rd party dependency: Popper, which should be available
 	<script src="./plugins/bootstrap/5.0.2/js/bootstrap.min.js"></script>
 ```
 
-
+#### <span id="#c2_1"   >2.1.2. Tooltips</span>  
 To enable Bootstrap 5 tooltips we need a pinch of Javascript:
 ```
 // ----------------------------------------------------------------
@@ -242,9 +245,18 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 });
 ```
 
+### <span id="#c2_2"    >2.2. HTML</span>  
 HTML
 scope row/col
 
+### <span id="#c2_3"    >2.3. Javascript</span>  
 Javascript let
+
+### <span id="#c2_4"    >2.4. Angular</span>  
+## <span id="#c3"       >3. Functionality and Screenshots</span>  
+## <span id="#c3_1"      >3.1. Columns</span>  
+## <span id="#c3_2"      >3.1. Filters</span>  
+
+
 
 
