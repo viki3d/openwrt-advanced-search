@@ -17,8 +17,8 @@
 ### <a href="#c2_3"   >2.3. Javascript</a>  
 ### <a href="#c2_4"   >2.4. Angular</a>  
 ## <a href="#c3"      >3. Functionality and Screenshots</a>  
-## <a href="#c3_1"    >3.1. Columns</a>  
-## <a href="#c3_2"    >3.1. Filters</a>  
+### <a href="#c3_1"    >3.1. Columns</a>  
+### <a href="#c3_2"    >3.1. Filters</a>  
 
 ## <span id="c1">1. Download router's database</span>
 ### <span id="c1_1">1.1. HTTP requests</span>
