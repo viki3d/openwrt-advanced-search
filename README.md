@@ -13,6 +13,7 @@
 ### <a href="#c2_1"   >2.1. Bootstrap 5</a>  
 #### <a href="#c2_1_1">2.1.1. Imports</a>  
 #### <a href="#c2_1_2">2.1.2. Tooltips</a>  
+#### <a href="#c2_1_3">2.1.3. Icons</a>  
 ### <a href="#c2_2"   >2.2. HTML</a>  
 ### <a href="#c2_3"   >2.3. Javascript</a>  
 ### <a href="#c2_4"   >2.4. Angular</a>  
@@ -243,6 +244,12 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	});
 	return tootlip;
 });
+```
+
+#### <span id="c2_1_3">2.1.3. Icons</span>  
+Icons usage in the Bootstrap project passed through a lot of transformations. In Bootstrap 3 icons were included into the project and excluded in version 4. Now in version 5 they are available as a separate project, holding them in SVG format:
+```
+https://icons.getbootstrap.com/
 ```
 
 ### <span id="c2_2"    >2.2. HTML</span>  
