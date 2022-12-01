@@ -247,7 +247,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 ```
 
 #### <span id="c2_1_3">2.1.3. Icons</span>  
-Icons usage in the Bootstrap project passed through a lot of transformations. In Bootstrap 3 icons were included into the project and excluded in version 4. Now in version 5 they are available as a separate project, holding them in SVG format:
+Icons usage in the Bootstrap project passed through a lot of transformations. In Bootstrap 3 icons were included into the project and excluded in version 4. Now in version 5 they are again part of the project but available as external content, storing them in SVG format:
 ```
 https://icons.getbootstrap.com/
 ```
