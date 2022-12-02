@@ -18,8 +18,9 @@
 ### <a href="#c2_3"   >2.3. Javascript</a>  
 ### <a href="#c2_4"   >2.4. Angular</a>  
 ## <a href="#c3"      >3. Functionality and Screenshots</a>  
-### <a href="#c3_1"    >3.1. Columns</a>  
-### <a href="#c3_2"    >3.1. Filters</a>  
+### <a href="#c3_1"   >3.1. Columns</a>  
+### <a href="#c3_2"   >3.2. Filters</a>  
+### <a href="#c3_3"   >3.3. Ordering columns</a>  
 
 ## <span id="c1">1. Download router's database</span>
 ### <span id="c1_1">1.1. HTTP requests</span>
@@ -286,7 +287,7 @@ Filter by columns <i>Brand</i> and <i>Model</i>:
 Filter by columns <i>CPUcores</i>, <i>WLAN2.4</i> and <i>WLAN5.0</i>:  
 ![Filter columns CPUcores, WLAN2.4 and WLAN5.0](screenshots/03.png?id=1 "CPUcores, WLAN2.4 and WLAN5.0")
 
-### <span id="c3_3"      >3.3. Ordering column items ascending or descending</span>  
+### <span id="c3_3"      >3.3. Ordering columns</span>  
 Every column  can be ordered ascending or descending:  
   
 Order by <i>Brand</i> ascending:  
