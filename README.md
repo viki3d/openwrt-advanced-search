@@ -274,10 +274,16 @@ For most functionality we avoid pure Javascript and use Angular directly.
 ### <span id="c2_4"    >2.4. Angular</span>  
 ## <span id="c3"       >3. Functionality and Screenshots</span>  
 ### <span id="c3_1"      >3.1. Columns</span>  
-User can show or hidde a column of his choice:  
-![Buttons showing columns](screenshots/01.png?id=1 "Columns can be shown or hidden trough buttons")
+User can show or hide a column of his choice:  
+![Buttons showing columns](screenshots/01.png?id=1 "Columns can be shown or hidden through buttons")
+
+![Buttons showing columns](screenshots/02png?id=1 "Columns can be shown or hidden through buttons")
+![Buttons showing columns](screenshots/03.png?id=1 "Columns can be shown or hidden through buttons")
 
 ### <span id="c3_2"      >3.1. Filters</span>  
+
+![Buttons showing columns](screenshots/04.png?id=1 "Columns can be shown or hidden through buttons")
+![Buttons showing columns](screenshots/05.png?id=1 "Columns can be shown or hidden through buttons")
 
 
 
