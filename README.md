@@ -273,8 +273,8 @@ For most functionality we avoid pure Javascript and use Angular directly.
 
 ### <span id="c2_4"    >2.4. Angular</span>  
 ## <span id="c3"       >3. Functionality and Screenshots</span>  
-## <span id="c3_1"      >3.1. Columns</span>  
-## <span id="c3_2"      >3.1. Filters</span>  
+### <span id="c3_1"      >3.1. Columns</span>  
+### <span id="c3_2"      >3.1. Filters</span>  
 
 
 
