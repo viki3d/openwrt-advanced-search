@@ -274,7 +274,8 @@ For most functionality we avoid pure Javascript and use Angular directly.
 ### <span id="c2_4"    >2.4. Angular</span>  
 ## <span id="c3"       >3. Functionality and Screenshots</span>  
 ### <span id="c3_1"      >3.1. Columns</span>  
-![Buttons showing columns](images/01.png?id=1 "Columns can be shown or hidden trough buttons")
+User can show or hidde a column of his choice:  
+![Buttons showing columns](screenshots/01.png?id=1 "Columns can be shown or hidden trough buttons")
 
 ### <span id="c3_2"      >3.1. Filters</span>  
 
