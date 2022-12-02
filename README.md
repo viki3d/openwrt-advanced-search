@@ -278,10 +278,11 @@ User can show or hide a column of his choice:
 ![Buttons showing columns](screenshots/01.png?id=1 "Columns can be shown or hidden through buttons")
 
 ### <span id="c3_2"      >3.2. Filters</span>  
-![Filter column](screenshots/02.png?id=1 "Columns can be shown or hidden through buttons")
-![Filter column](screenshots/03.png?id=1 "Columns can be shown or hidden through buttons")
+![Filter columns Brand and Model](screenshots/02.png?id=1 "Filter columns Brand and Model")
+![Filter columns CPUcores, WLAN2.4 and WLAN5.0](screenshots/03.png?id=1 "CPUcores, WLAN2.4 and WLAN5.0")
 
-### <span id="c3_3"      >3.3. Ordering</span>  
+### <span id="c3_3"      >3.3. Ordering column items ascending or descending</span>  
+Every column  can be ordered ascending or descending:  
 ![Order column ascending](screenshots/04.png?id=1 "Order column ascending")
 ![Order column descending](screenshots/05.png?id=1 "Order column descending")
 
