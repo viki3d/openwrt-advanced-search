@@ -1,7 +1,7 @@
 # openwrt-advanced-search
 ### <a href="http://openwrt.viki3d.com/demo.html" target="_blank">DEMO</a>
 
-![openwrt-advanced-search-01.png](/openwrt-advanced-search-01.png "openwrt-advanced-search common view")
+![openwrt-advanced-search-02.png](/openwrt-advanced-search-02.png?id=1 "openwrt-advanced-search main schema")
 
 ### CONTENTS
 ## <a href="#c1"      >1. Download router's database</a>  
@@ -9,6 +9,17 @@
 #### <a href="#c1_1_1">1.1.1 Raw</a>  
 #### <a href="#c1_1_2">1.1.2 CURL</a>  
 #### <a href="#c1_1_3">1.1.3 PHP</a>  
+## <a href="#c2"      >2. Building the page</a>  
+### <a href="#c2_1"   >2.1. Bootstrap 5</a>  
+#### <a href="#c2_1_1">2.1.1. Imports</a>  
+#### <a href="#c2_1_2">2.1.2. Tooltips</a>  
+#### <a href="#c2_1_3">2.1.3. Icons</a>  
+### <a href="#c2_2"   >2.2. HTML</a>  
+### <a href="#c2_3"   >2.3. Javascript</a>  
+### <a href="#c2_4"   >2.4. Angular</a>  
+## <a href="#c3"      >3. Functionality and Screenshots</a>  
+### <a href="#c3_1"    >3.1. Columns</a>  
+### <a href="#c3_2"    >3.1. Filters</a>  
 
 ## <span id="c1">1. Download router's database</span>
 ### <span id="c1_1">1.1. HTTP requests</span>
@@ -124,7 +135,7 @@ Get the <b><i>Etag</i></b> with HEAD request:
 	}
 ?>
 ```
-Unzip .gz file:
+<b>Unzip .gz file:</b>  
 ```
 <?php
 
@@ -150,7 +161,7 @@ Unzip .gz file:
 
 ?>
 ```
-Unzip .zip file  
+<b>Unzip .zip file</b>  
 The file "<i>toh_dump_tab_separated.zip</i>" is not usual .zip archive but an SFX-ZIP archive, which is not readable from the PHP ZipArchive package. And we do not want to use custom implementation or 3rd party library for that. That's why we go for the .gz version of the file.
 ```
 <?php
@@ -198,8 +209,52 @@ The file "<i>toh_dump_tab_separated.zip</i>" is not usual .zip archive but an SF
 ?>
 ```
 
+## <span id="c2"      >2. Building the page</span>  
+### <span id="c2_1"   >2.1. Bootstrap 5</span>  
+#### <span id="c2_1_1">2.1.1. Imports</span>  
+Bootstrap 5 depends from 3rd party dependency: Popper, which should be available by including <i>bootstrap.bundle.min.js</i>. However, we do not want to import all that stuff but only the minimal Bootstrap: <i>bootstrap.min.js</i>, which involves the need of explicit import of the Popper dependency:
+```
+<head>
+	...
+	<!-- Popper -->
+	<script src="./plugins/popper/2.11.6/popper.min.js"></script>
+	<!-- 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+	-->
+	
+	<!-- Bootstrap (@depends jQuery or Popper) -->
+	<link href="./plugins/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="./plugins/bootstrap/5.0.2/css/bootstrap-grid.min.css" rel="stylesheet" />
+	<link href="./plugins/bootstrap/5.0.2/css/bootstrap-utilities.min.css" rel="stylesheet" />
+	<script src="./plugins/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+```
 
-Enable Bootstrap 5 tooltips  
+#### <span id="c2_1_2">2.1.2. Tooltips</span>  
+Tooltips rely on the 3rd party library Popper for positioning. You must include popper.min.js before bootstrap.js in order for tooltips to work!  
+
+In order to work they should be initialized with Javascript first. See below (2.3).  
+
+```
+<button class="btn btn-primary" title="tooltipText" data-bs-toggle="tooltip" data-bs-placement="top">Model</button>
+```
+
+#### <span id="c2_1_3">2.1.3. Icons</span>  
+Icons usage in the Bootstrap project passed through a lot of transformations. In Bootstrap 3 icons were included into the project and excluded in version 4. Now in version 5 they are again part of the project but available as external content, storing them in SVG format:
+```
+https://icons.getbootstrap.com/
+```
+
+### <span id="c2_2"    >2.2. HTML</span>  
+We use <i>scope="col"</i> for the &lt; tags
+```
+  <tr>
+    <th></th>
+    <th scope="col">Brand</th>
+```
+and don't use <i>scope="row"</i> for bolding the row heads, since the first <b><i>pid</i></b> openwrt column is still not supported due lack of space on the page.
+
+### <span id="c2_3"    >2.3. Javascript</span>  
+To enable Bootstrap 5 tooltips we need a pinch of Javascript:
 ```
 // ----------------------------------------------------------------
 // Initialize (enable) tool-tips on this page (uses popper.js)
@@ -214,5 +269,13 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 	return tootlip;
 });
 ```
+For most functionality we avoid pure Javascript and use Angular directly.
+
+### <span id="c2_4"    >2.4. Angular</span>  
+## <span id="c3"       >3. Functionality and Screenshots</span>  
+## <span id="c3_1"      >3.1. Columns</span>  
+## <span id="c3_2"      >3.1. Filters</span>  
+
+
 
 
