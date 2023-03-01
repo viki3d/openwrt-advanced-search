@@ -21,6 +21,7 @@
 ### <a href="#c3_1"   >3.1. Columns</a>  
 ### <a href="#c3_2"   >3.2. Filters</a>  
 ### <a href="#c3_3"   >3.3. Ordering columns</a>  
+### <a href="#c3_4"   >3.4. OpenWRT database</a>  
 
 ## <span id="c1">1. Download router's database</span>
 ### <span id="c1_1">1.1. HTTP requests</span>
@@ -296,6 +297,9 @@ Order by <i>Brand</i> ascending:
 Order by <i>Brand</i> descending:  
 ![Order column descending](screenshots/05.png?id=1 "Order column descending")
 
-
+### <span id="c3_4"      >3.4. OpenWRT full database</span>  
+Just remove "demo.html" from the url:  
+![OpenWRT database](screenshots/06.png?id=1 "OpenWRT database")
+  
 
 
