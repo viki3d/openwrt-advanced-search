@@ -1,5 +1,5 @@
 # openwrt-advanced-search
-### <a href="http://openwrt.viki3d.com/demo.html" target="_blank">DEMO</a>
+### <a href="http://openwrt.viki3d.com/demo.html" target="_blank">Live DEMO</a>
 
 ![openwrt-advanced-search-02.png](/openwrt-advanced-search-02.png?id=1 "openwrt-advanced-search main schema")
 
